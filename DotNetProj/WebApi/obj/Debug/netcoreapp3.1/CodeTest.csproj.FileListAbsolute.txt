@@ -1,0 +1,5 @@
+C:\Users\qxv6298\source\repos\CodeTest\CodeTest\obj\Debug\netcoreapp3.1\CodeTest.csprojAssemblyReference.cache
+C:\Users\qxv6298\source\repos\CodeTest\CodeTest\obj\Debug\netcoreapp3.1\CodeTest.AssemblyInfoInputs.cache
+C:\Users\qxv6298\source\repos\CodeTest\CodeTest\obj\Debug\netcoreapp3.1\CodeTest.AssemblyInfo.cs
+C:\Users\qxv6298\source\repos\CodeTest\CodeTest\obj\Debug\netcoreapp3.1\CodeTest.csproj.CoreCompileInputs.cache
+C:\Users\qxv6298\source\repos\CodeTest\CodeTest\obj\Debug\netcoreapp3.1\CodeTest.MvcApplicationPartsAssemblyInfo.cache

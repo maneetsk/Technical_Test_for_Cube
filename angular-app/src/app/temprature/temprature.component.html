@@ -1,0 +1,45 @@
+<div class="w3-container">
+	<form class="w3-container" [formGroup]="TempratureForm" (ngSubmit)="doRegister()">
+		<div class="w3-panel w3-round-small w3-teal">
+			<h3><span>Temprature Conversions</span></h3>
+		</div>
+
+		<label class="w3-text-blue"><b>Temprature</b></label>
+		<input class="w3-input w3-border" type="number" step=".01" formControlName="current_temprature">
+		<div class="w3-panel w3-red"
+			*ngIf="TempratureForm.controls.current_temprature.invalid && (TempratureForm.controls.current_temprature.dirty || TempratureForm.controls.current_temprature.touched)">
+			Please provide a number</div>
+
+		<label class="w3-text-blue"><b>Convert From</b></label>
+		<select class="w3-select w3-input w3-border" formControlName="convert_from">
+			<option [ngValue]="null" selected>Please select an option</option>
+			<option *ngFor="let TempOpts of TempratureOptions;" [ngValue]="TempOpts">
+				{{ TempOpts }}
+			</option>
+		</select>
+		<div class="w3-panel w3-red"
+			*ngIf="TempratureForm.controls.convert_from.invalid && (TempratureForm.controls.convert_from.dirty || TempratureForm.controls.convert_from.touched)">
+			Please select a value</div>
+
+		<label class="w3-text-blue"><b>Convert To</b></label>
+		<select class="w3-select w3-input w3-border" formControlName="convert_to">
+			<option [ngValue]="null" selected>Please select an option</option>
+			<option *ngFor="let TempOpts of TempratureOptions | tempraturefilter:TempratureForm.controls.convert_from;"
+				[ngValue]="TempOpts">
+				{{ TempOpts }}
+			</option>
+		</select>
+		<div class="w3-panel w3-red"
+			*ngIf="TempratureForm.controls.convert_to.invalid && (TempratureForm.controls.convert_to.dirty || TempratureForm.controls.convert_to.touched)">
+			Please select a value</div>
+		<br />
+		<button class="w3-btn w3-blue" type="submit" [disabled]="!TempratureForm.valid"><span>Perform
+				Conversion</span></button>
+		<div class="w3-panel w3-round-small">
+			<label appFontSize [fontsize]="'24px'" *ngIf="ShowConvertedTemprature">
+				{{tempratureResponse.currentTemprature}} {{tempratureResponse.currentUnit}} in
+				{{tempratureResponse.convertedUnit}} is {{tempratureResponse.convertedTemprature}}
+			</label>
+		</div>
+	</form>
+</div>
